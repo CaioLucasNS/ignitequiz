@@ -34,18 +34,18 @@ export function Level({
 
   const COLOR = TYPE_COLORS[type];
 
-  // const animatedContainerStyle = useAnimatedStyle(() => {
-  //   return {
-  //     transform: [{ scale: scale.value}]
-  //   }
-  // });
+  const animatedContainerStyle = useAnimatedStyle<any>(() => {
+    return {
+      transform: [{ scale: scale.value }],
+    };
+  });
 
   return (
     <TouchableOpacity {...rest}>
-      <Animated.View
+      <View
         style={[
           styles.container,
-          // animatedContainerStyle,
+          animatedContainerStyle,
           {
             borderColor: COLOR,
             backgroundColor: isChecked ? COLOR : "transparent",
@@ -60,7 +60,7 @@ export function Level({
         >
           {title}
         </Text>
-      </Animated.View>
+      </View>
     </TouchableOpacity>
   );
 }
