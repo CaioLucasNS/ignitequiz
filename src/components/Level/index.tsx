@@ -3,6 +3,7 @@ import {
   TouchableOpacityProps,
   Text,
   View,
+  // Animated,
 } from "react-native";
 import Animated, {
   useSharedValue,
@@ -30,7 +31,7 @@ export function Level({
   isChecked = false,
   ...rest
 }: Props) {
-  const scale = useSharedValue(1.5);
+  const scale = useSharedValue(1);
 
   const COLOR = TYPE_COLORS[type];
 
@@ -42,7 +43,7 @@ export function Level({
 
   return (
     <TouchableOpacity {...rest}>
-      <View
+      <Animated.View
         style={[
           styles.container,
           animatedContainerStyle,
@@ -60,7 +61,7 @@ export function Level({
         >
           {title}
         </Text>
-      </View>
+      </Animated.View>
     </TouchableOpacity>
   );
 }
