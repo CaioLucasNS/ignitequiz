@@ -14,11 +14,9 @@ export function ProgressBar({ total, current }: Props) {
 
   const sharedProgress = useSharedValue(percentage);
 
-  const styleAnimated = useAnimatedStyle(() => {
-    return {
-      width: `${sharedProgress.value}%`
-    }
-  })
+  const styleAnimated = useAnimatedStyle(() => ({
+    width: `${sharedProgress.value}%`
+  }))
 
   /**
    * usando o useEffect para observar quando
